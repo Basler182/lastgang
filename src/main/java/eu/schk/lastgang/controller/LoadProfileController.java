@@ -96,9 +96,10 @@ public class LoadProfileController implements Initializable {
             amountPeaks.setText(peak.size() + "");
             OptionalDouble max = loadProfileList.stream().mapToDouble(LoadProfile::value).max();
             OptionalDouble average = peak.stream().mapToLong(Peak::getDuration).average();
-            if(max.isPresent() && average.isPresent()){
+            OptionalDouble averagePeak = peak.stream().mapToDouble(Peak::getValue).average();
+            if(max.isPresent() && average.isPresent() && averagePeak.isPresent()){
                 highestPeak.setText(df.format(max.getAsDouble()) + "kW");
-                averagePeakKWh.setText(df.format(average.getAsDouble()) + "kWh");
+                averagePeakKWh.setText(df.format(averagePeak.getAsDouble()) + "kWh");
                 peak2threshold.setText(df.format(max.getAsDouble() - peakThreshold) + "kW");
                 durationOfPeak.setText(df.format(average.getAsDouble()) + "min");
                 CostReduction costReduction = getCostReduction(max.getAsDouble(), peakThreshold);
