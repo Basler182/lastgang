@@ -11,3 +11,7 @@ The interface between companies and the public grid and the energy markets is a 
 
 The software displays the histogram of a load profile of a company and allows the user to analyze the load profile and identify potential for improvement in the energy consumption behavior of a company.
 It also allows the user to simulate the effect of a change in the energy consumption behavior of a company on the load profile and the associated costs.
+
+# Screens
+
+![](https://github.com/Basler182/lastgang/blob/main/screens/img.png)
