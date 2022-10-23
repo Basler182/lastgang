@@ -9,7 +9,7 @@ public final class CostCalculator {
     }
 
 
-    public static CostReduction getCostReduction(double peak, double treshold) {
+    public static CostReduction getCostReduction(double peak, double treshold, double kWHSize) {
         /*
          * Gesamtkosten pro Jahr (ohne Kostenreduzierung): Peak*125,31
          * Gesamtkosten pro Jahr (nach Kostenreduzierung): (Peak-Peakreduzierung)*125,31
@@ -20,7 +20,7 @@ public final class CostCalculator {
 
         double costsPerYear = peak * 125.31;
         double costsPerYearAfterReduction = (peak - peakReduction) * 125.31;
-        double totalCostsReduction = (15 * 125.31 * peakReduction) - 500 * peakReduction;
+        double totalCostsReduction = (15 * 125.31 * peakReduction) - 500 * kWHSize;
 
         return new CostReduction(costsPerYear, costsPerYearAfterReduction, totalCostsReduction);
     }

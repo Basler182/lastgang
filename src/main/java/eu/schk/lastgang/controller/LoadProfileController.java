@@ -39,7 +39,7 @@ public class LoadProfileController implements Initializable {
     Text amountPeaks, highestPeak, averagePeakKWh, peak2threshold, durationOfPeak, threshold;
 
     @FXML
-    Text totalCostReduction, costsPerYear, costsPerYearAfterReduction ;
+    Text totalCostReduction, costsPerYear, costsPerYearAfterReduction, amortizationDuration, neededBatterySize;
 
     @FXML
     Slider thresholdSlider;
@@ -102,10 +102,34 @@ public class LoadProfileController implements Initializable {
                 averagePeakKWh.setText(df.format(averagePeak.getAsDouble()) + "kWh");
                 peak2threshold.setText(df.format(max.getAsDouble() - peakThreshold) + "kW");
                 durationOfPeak.setText(df.format(average.getAsDouble()) + "min");
-                CostReduction costReduction = getCostReduction(max.getAsDouble(), peakThreshold);
+
+                Optional<Peak> max1 = peak.stream().max(Comparator.comparing(Peak::getValue));
+                double neededBatterySizeCalc = 0;
+                if (max1.isPresent()) {
+                    Peak peak1 = max1.get();
+                    neededBatterySizeCalc = peak1.getValue();
+                    var max2 = (max.getAsDouble() - peakThreshold);
+                    if(max2 > neededBatterySizeCalc){
+                        neededBatterySizeCalc = max2;
+                    }
+                }
+
+                CostReduction costReduction = getCostReduction(max.getAsDouble(), peakThreshold, neededBatterySizeCalc);
                 totalCostReduction.setText(df.format(costReduction.totalCostsredution()) + "€");
                 costsPerYear.setText(df.format(costReduction.costsPerYear()) + "€");
                 costsPerYearAfterReduction.setText(df.format(costReduction.costsPerYearAfterReduction()) + "€");
+
+                double finalNeededBatterySizeCalc = neededBatterySizeCalc;
+                peak.stream().max(Comparator.comparing(Peak::getValue))
+                        .ifPresent(peak1 -> amortizationDuration
+                                .setText(df.format(
+                                        finalNeededBatterySizeCalc * 500
+                                                /
+                                        (costReduction.costsPerYear() - costReduction.costsPerYearAfterReduction())) + "Jahre"));
+
+                peak.stream().max(Comparator.comparing(Peak::getValue)).ifPresent(p-> neededBatterySize.setText(df.format(p.getValue() >
+                        (max.getAsDouble() - peakThreshold)? p.getValue()
+                        : (max.getAsDouble() - peakThreshold)) + "kWh"));
             }
         } else {
             amountPeaks.setText(0 + "");
@@ -116,6 +140,7 @@ public class LoadProfileController implements Initializable {
             totalCostReduction.setText(0 + "€");
             costsPerYear.setText(0 + "€");
             costsPerYearAfterReduction.setText(0 + "€");
+            amortizationDuration.setText(0 + "Jahre");
         }
         lineChart.getData().remove(thresholdSeries);
         thresholdSeries = new XYChart.Series<>();
@@ -126,7 +151,7 @@ public class LoadProfileController implements Initializable {
         thresholdSeries.getData().add(new XYChart.Data<>(peakThreshold, thresholdTopPoint));
         thresholdSeries.getData().add(new XYChart.Data<>(peakThreshold + 0.001, 0));
         lineChart.getData().add(thresholdSeries);
-        threshold.setText(peakThreshold + "");
+        threshold.setText(df.format(peakThreshold) + "");
 
 
     }

@@ -161,6 +161,12 @@
                           text="0"/>
                 </HBox>
                 <Separator prefWidth="200.0"/>
+                <HBox layoutX="15.0" layoutY="208.0" spacing="10.0">
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Benötigte Batteriegröße:"/>
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
+                    <Text id="amountPeaks" fx:id="neededBatterySize" strokeType="OUTSIDE"
+                          strokeWidth="0.0" text="0"/>
+                </HBox>
                 <HBox layoutX="15.0" layoutY="159.0" spacing="10.0">
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten pro Jahr:"/>
                     <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
@@ -169,17 +175,26 @@
                 </HBox>
                 <HBox layoutX="15.0" layoutY="185.0" spacing="10.0">
                     <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="Kosten pro Jahr nach Reduzierung:"/>
+                          text="Kosten pro Jahr nach Ersparnis:"/>
                     <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
                     <Text id="amountPeaks" fx:id="costsPerYearAfterReduction" strokeType="OUTSIDE"
                           strokeWidth="0.0" text="0"/>
                 </HBox>
                 <HBox layoutX="15.0" layoutY="208.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Totale Kostenreduzierung:"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Totale Ersparnis nach 15J:"/>
                     <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
                     <Text id="amountPeaks" fx:id="totalCostReduction" strokeType="OUTSIDE"
                           strokeWidth="0.0" text="0"/>
                 </HBox>
+                <HBox layoutX="15.0" layoutY="208.0" spacing="10.0">
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amortisierung:"/>
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
+                    <Text id="amountPeaks" fx:id="amortizationDuration" strokeType="OUTSIDE"
+                          strokeWidth="0.0" text="0"/>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+                <Label alignment="CENTER" font="$x1" style="&#10;" text="Peaks" textAlignment="CENTER"
+                       textFill="$x2" wrapText="false"/>
                 <TableView fx:id="tableView" prefHeight="403.0" prefWidth="205.0">
                     <columns>
                         <TableColumn fx:id="startCol" prefWidth="120" text="Start"/>
