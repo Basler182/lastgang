@@ -56,6 +56,9 @@ public class LoadProfileController implements Initializable {
     @FXML
     TableColumn<Peak, String> valueCol;
 
+    @FXML
+    TableColumn<Peak, String> kwCol;
+
     XYChart.Series<Number, Number> histogramSeries;
     XYChart.Series<Number, Number> thresholdSeries;
 
@@ -84,6 +87,7 @@ public class LoadProfileController implements Initializable {
         startCol.setCellValueFactory(new PropertyValueFactory<>("start"));
         endCol.setCellValueFactory(new PropertyValueFactory<>("end"));
         valueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
+        kwCol.setCellValueFactory(new PropertyValueFactory<>("kw"));
         tableView.getItems().removeAll();
         tableView.setItems(observableList);
         tableView.refresh();

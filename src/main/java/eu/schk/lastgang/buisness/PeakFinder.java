@@ -8,6 +8,7 @@ import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.OptionalDouble;
 
@@ -39,7 +40,8 @@ public final class PeakFinder {
                 peaks.add(new Peak(start.dateTime(),
                         end.dateTime(),
                         null,
-                        ChronoUnit.MINUTES.between(start.dateTime(), end.dateTime())));
+                        ChronoUnit.MINUTES.between(start.dateTime(), end.dateTime()),
+                        null));
                 start = null;
                 end = null;
             }
@@ -58,7 +60,12 @@ public final class PeakFinder {
                 var avg = (average.getAsDouble() - peakThreshold) / 4 * sum.size();
                 BigDecimal bd = new BigDecimal(avg).setScale(2, RoundingMode.HALF_UP);
 
-                peaksWithValues.add(new Peak(peak.getStart(), peak.getEnd(), bd.doubleValue(), peak.getDuration()));
+                Peak peak1 = new Peak(peak.getStart(), peak.getEnd(), bd.doubleValue(), peak.getDuration(), null);
+                sum.stream().max(Comparator.comparing(LoadProfile::value)).ifPresent(v -> {
+                    BigDecimal bd1 = new BigDecimal(v.value()-peakThreshold).setScale(2, RoundingMode.HALF_UP);
+                    peak1.setKw(bd1.doubleValue());
+                });
+                peaksWithValues.add(peak1);
             }
         }
         return peaksWithValues;

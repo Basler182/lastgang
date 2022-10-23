@@ -7,12 +7,14 @@ public class Peak {
     LocalDateTime start;
     LocalDateTime end;
     Double value;
+    Double kw;
     long duration;
 
-    public Peak(LocalDateTime start, LocalDateTime end, Double value, long duration) {
+    public Peak(LocalDateTime start, LocalDateTime end, Double value, long duration, Double kW) {
         this.start = start;
         this.end = end;
         this.value = value;
+        this.kw = kW;
         this.duration = duration;
     }
 
@@ -46,6 +48,14 @@ public class Peak {
 
     public void setDuration(long duration) {
         this.duration = duration;
+    }
+
+    public Double getKw() {
+        return kw;
+    }
+
+    public void setKw(Double kw) {
+        this.kw = kw;
     }
 
     @Override

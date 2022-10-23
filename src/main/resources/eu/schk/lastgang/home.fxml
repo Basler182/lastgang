@@ -1,205 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="eu.schk.lastgang.controller.LoadProfileController">
+<StackPane prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.schk.lastgang.controller.LoadProfileController">
     <VBox prefHeight="600.0" prefWidth="900.0">
         <MenuBar VBox.vgrow="NEVER">
             <Menu mnemonicParsing="false" text="File">
-                <MenuItem mnemonicParsing="false" text="New"/>
-                <MenuItem mnemonicParsing="false" text="Open…"/>
-                <Menu mnemonicParsing="false" text="Open Recent"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Close"/>
-                <MenuItem mnemonicParsing="false" text="Save"/>
-                <MenuItem mnemonicParsing="false" text="Save As…"/>
-                <MenuItem mnemonicParsing="false" text="Revert"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Preferences…"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Quit"/>
+                <MenuItem mnemonicParsing="false" text="New" />
+                <MenuItem mnemonicParsing="false" text="Open…" />
+                <Menu mnemonicParsing="false" text="Open Recent" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="Close" />
+                <MenuItem mnemonicParsing="false" text="Save" />
+                <MenuItem mnemonicParsing="false" text="Save As…" />
+                <MenuItem mnemonicParsing="false" text="Revert" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="Preferences…" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="Quit" />
             </Menu>
             <Menu mnemonicParsing="false" text="Edit">
-                <MenuItem mnemonicParsing="false" text="Undo"/>
-                <MenuItem mnemonicParsing="false" text="Redo"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Cut"/>
-                <MenuItem mnemonicParsing="false" text="Copy"/>
-                <MenuItem mnemonicParsing="false" text="Paste"/>
-                <MenuItem mnemonicParsing="false" text="Delete"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Select All"/>
-                <MenuItem mnemonicParsing="false" text="Unselect All"/>
+                <MenuItem mnemonicParsing="false" text="Undo" />
+                <MenuItem mnemonicParsing="false" text="Redo" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="Cut" />
+                <MenuItem mnemonicParsing="false" text="Copy" />
+                <MenuItem mnemonicParsing="false" text="Paste" />
+                <MenuItem mnemonicParsing="false" text="Delete" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="Select All" />
+                <MenuItem mnemonicParsing="false" text="Unselect All" />
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
-                <MenuItem mnemonicParsing="false" text="About Load Profile Application"/>
+                <MenuItem mnemonicParsing="false" text="About Load Profile Application" />
             </Menu>
         </MenuBar>
-        <SplitPane dividerPositions="0.23360459550023932, 0.6884873145045475" focusTraversable="true"
-                   prefHeight="575.0" prefWidth="941.0" VBox.vgrow="ALWAYS">
+        <SplitPane dividerPositions="0.23360459550023932, 0.6884873145045475" focusTraversable="true" prefHeight="575.0" prefWidth="941.0" VBox.vgrow="ALWAYS">
             <VBox spacing="10.0">
                 <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
-                <Label alignment="CENTER" style="&#10;" text="Konfiguration" textAlignment="CENTER"
-                       wrapText="false">
+                <Label alignment="CENTER" style="&#10;" text="Konfiguration" textAlignment="CENTER" wrapText="false">
                     <font>
-                        <Font size="18.0" fx:id="x11"/>
+                        <Font size="18.0" fx:id="x11" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" layoutX="15.0" layoutY="15.0" style="&#10;" text="Firma"
-                       textAlignment="CENTER" wrapText="false">
+                <Label alignment="CENTER" layoutX="15.0" layoutY="15.0" style="&#10;" text="Firma" textAlignment="CENTER" wrapText="false">
                     <font>
-                        <Font size="18.0" fx:id="x111"/>
+                        <Font size="18.0" fx:id="x111" />
                     </font>
                     <textFill>
-                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x211"/>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x211" />
                     </textFill>
                 </Label>
                 <HBox>
-                    <ChoiceBox fx:id="companySelection" prefHeight="25.0" prefWidth="223.0"/>
+                    <ChoiceBox fx:id="companySelection" prefHeight="25.0" prefWidth="223.0" />
                 </HBox>
-                <Label alignment="CENTER" layoutX="15.0" layoutY="53.0" style="&#10;" text="Threshold"
-                       textAlignment="CENTER" wrapText="false">
+                <Label alignment="CENTER" layoutX="15.0" layoutY="53.0" style="&#10;" text="Threshold" textAlignment="CENTER" wrapText="false">
                     <font>
-                        <Font size="18.0" fx:id="x1111"/>
+                        <Font size="18.0" fx:id="x1111" />
                     </font>
                     <textFill>
-                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x2111"/>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x2111" />
                     </textFill>
                 </Label>
                 <HBox>
-                    <Slider fx:id="thresholdSlider" blockIncrement="100.0" majorTickUnit="100.0"
-                            prefHeight="38.0" prefWidth="225.0" showTickLabels="true"
-                            showTickMarks="true">
+                    <Slider fx:id="thresholdSlider" blockIncrement="100.0" majorTickUnit="100.0" prefHeight="38.0" prefWidth="225.0" showTickLabels="true" showTickMarks="true">
                         <HBox.margin>
-                            <Insets left="8.0"/>
+                            <Insets left="8.0" />
                         </HBox.margin>
                     </Slider>
                 </HBox>
             </VBox>
             <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
                 <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
                 <VBox spacing="5.0">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
-                    <Label alignment="CENTER" style="&#10;" text="Chart Ansicht" textAlignment="CENTER"
-                           wrapText="false">
+                    <Label alignment="CENTER" style="&#10;" text="Chart Ansicht" textAlignment="CENTER" wrapText="false">
                         <font>
-                            <Font size="18.0" fx:id="x1"/>
+                            <Font size="18.0" fx:id="x1" />
                         </font>
                         <textFill>
-                            <Color red="0.624" green="0.624" blue="0.624" fx:id="x2"/>
+                            <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
                         </textFill>
                     </Label>
-                    <HBox fx:id="chartPane" prefHeight="498.0" prefWidth="420.0"/>
+                    <HBox fx:id="chartPane" prefHeight="498.0" prefWidth="420.0" />
                 </VBox>
             </ScrollPane>
             <VBox prefHeight="574.0" prefWidth="367.0" spacing="5.0">
                 <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
-                <Label alignment="CENTER" font="$x1" style="&#10;" text="Details" textAlignment="CENTER"
-                       textFill="$x2" wrapText="false"/>
+                <Label alignment="CENTER" font="$x1" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
                 <HBox layoutX="15.0" layoutY="48.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Treshold:"/>
-                    <Pane prefHeight="0.0" prefWidth="124.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="threshold" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Treshold:" />
+                    <Pane prefHeight="0.0" prefWidth="124.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="threshold" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Peaks:"/>
-                    <Pane prefHeight="0.0" prefWidth="103.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="amountPeaks" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Peaks:" />
+                    <Pane prefHeight="0.0" prefWidth="103.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="amountPeaks" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="48.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Höchster Peak:"/>
-                    <Pane prefHeight="0.0" prefWidth="100.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="highestPeak" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Höchster Peak:" />
+                    <Pane prefHeight="0.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="highestPeak" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="91.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Peak minus Treshold:"/>
-                    <Pane prefHeight="0.0" prefWidth="42.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="peak2threshold" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Peak minus Treshold:" />
+                    <Pane prefHeight="0.0" prefWidth="42.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="peak2threshold" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="69.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="durschnittlicher Peak:"/>
-                    <Pane prefHeight="0.0" prefWidth="87.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="averagePeakKWh" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="durschnittlicher Peak:" />
+                    <Pane prefHeight="0.0" prefWidth="87.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="averagePeakKWh" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="112.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="durchschnittliche Dauer der Peaks:"/>
-                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="durationOfPeak" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="durchschnittliche Dauer der Peaks:" />
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="durationOfPeak" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
-                <Separator prefWidth="200.0"/>
+                <Separator prefWidth="200.0" />
                 <HBox layoutX="15.0" layoutY="208.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Benötigte Batteriegröße:"/>
-                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="neededBatterySize" strokeType="OUTSIDE"
-                          strokeWidth="0.0" text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Benötigte Batteriegröße:" />
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="neededBatterySize" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="159.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten pro Jahr:"/>
-                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="costsPerYear" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten pro Jahr:" />
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="costsPerYear" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="185.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="Kosten pro Jahr nach Ersparnis:"/>
-                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="costsPerYearAfterReduction" strokeType="OUTSIDE"
-                          strokeWidth="0.0" text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten pro Jahr nach Ersparnis:" />
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="costsPerYearAfterReduction" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="208.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Totale Ersparnis nach 15J:"/>
-                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="totalCostReduction" strokeType="OUTSIDE"
-                          strokeWidth="0.0" text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Totale Ersparnis nach 15J:" />
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="totalCostReduction" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
                 <HBox layoutX="15.0" layoutY="208.0" spacing="10.0">
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amortisierung:"/>
-                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS"/>
-                    <Text id="amountPeaks" fx:id="amortizationDuration" strokeType="OUTSIDE"
-                          strokeWidth="0.0" text="0"/>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amortisierung:" />
+                    <Pane prefHeight="0.0" prefWidth="44.0" HBox.hgrow="ALWAYS" />
+                    <Text id="amountPeaks" fx:id="amortizationDuration" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 </HBox>
-                <Separator prefWidth="200.0"/>
-                <Label alignment="CENTER" font="$x1" style="&#10;" text="Peaks" textAlignment="CENTER"
-                       textFill="$x2" wrapText="false"/>
+                <Separator prefWidth="200.0" />
+                <Label alignment="CENTER" font="$x1" style="&#10;" text="Peaks" textAlignment="CENTER" textFill="$x2" wrapText="false" />
                 <TableView fx:id="tableView" prefHeight="403.0" prefWidth="205.0">
                     <columns>
-                        <TableColumn fx:id="startCol" prefWidth="120" text="Start"/>
-                        <TableColumn fx:id="endCol" prefWidth="120" text="Ende"/>
-                        <TableColumn fx:id="valueCol" prefWidth="120" text="kWh"/>
+                        <TableColumn fx:id="startCol" prefWidth="120" text="Start" />
+                        <TableColumn fx:id="endCol" prefWidth="120" text="Ende" />
+                        <TableColumn fx:id="valueCol" maxWidth="90.0" prefWidth="75.0" text="kWh" />
+                        <TableColumn fx:id="kwCol" maxWidth="90.0" prefWidth="75.0" text="kW" />
                     </columns>
                 </TableView>
             </VBox>
